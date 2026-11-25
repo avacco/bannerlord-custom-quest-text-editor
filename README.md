@@ -4,10 +4,10 @@ Editor visual de conversaciones para mods de **Mount & Blade II: Bannerlord**. P
 
 ## Empezar
 
-1. Descomprime la carpeta y abre `index.html` en una versión reciente de Chrome, Edge o Firefox. El editor funciona sin conexión y sin instalar dependencias.
-2. Selecciona **Cargar ejemplo** para abrir *El mirador del valle*, una conversación ficticia creada para la herramienta.
-3. Selecciona el saludo y pulsa **Probar diálogo**. Preguntar por el camino vuelve al menú de respuestas. Las otras opciones llevan al cierre.
-4. Usa **Nuevo** para crear tu propio proyecto. Añade estados y líneas, y elige su siguiente estado en **Destino** o con los conectores del grafo.
+1. Descomprime la carpeta y abre `index.html` en una versión reciente de Chrome, Edge o Firefox. El editor funciona sin conexión y sin instalar dependencias. [O pruébalo aquí](https://avacco.github.io/bannerlord-custom-quest-text-editor/)
+3. Selecciona **Cargar ejemplo** para abrir *El mirador del valle*, una conversación ficticia creada para la herramienta.
+4. Selecciona el saludo y pulsa **Probar diálogo**. Preguntar por el camino vuelve al menú de respuestas. Las otras opciones llevan al cierre.
+5. Usa **Nuevo** para crear tu propio proyecto. Añade estados y líneas, y elige su siguiente estado en **Destino** o con los conectores del grafo.
 
 **Probar diálogo** parte del estado seleccionado. La vista previa permite activar condiciones manualmente y muestra como marcadores los valores que se resuelven durante la partida.
 
