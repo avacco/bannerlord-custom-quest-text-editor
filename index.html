@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Forja de diálogos · Bannerlord</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="csharp.js" defer></script>
+  <script src="project.js" defer></script>
+  <script src="localization.js" defer></script>
+  <script src="editor.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div><div class="brand-name">Forja de diálogos</div><div class="brand-detail">Bannerlord</div></div>
+    </div>
+    <div class="file-actions">
+      <button id="open-project" type="button" title="Abrir JSON, C# o catálogos XML">Abrir archivo</button>
+      <button id="save-project" type="button">Guardar JSON</button>
+      <button id="export-xml" type="button" hidden>Exportar XML</button>
+      <button id="export-code" class="primary" type="button"><span class="code-icon" aria-hidden="true">&lt;/&gt;</span> Exportar C#</button>
+      <input id="project-file" type="file" accept=".json,.cs,.xml,application/json" multiple hidden>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <div class="workspace-bar">
+      <div class="project-heading">
+        <input id="project-name" aria-label="Nombre del proyecto" maxlength="100" spellcheck="false">
+        <div class="project-secondary">
+          <select id="source-picker" aria-label="Archivo activo" hidden></select>
+          <select id="language-picker" aria-label="Idioma de los textos" hidden></select>
+          <div id="project-summary" class="muted"></div>
+        </div>
+      </div>
+      <div class="workspace-actions">
+        <button id="new-project" type="button" class="quiet">Nuevo</button>
+        <button id="load-demo" type="button" class="quiet">Cargar ejemplo</button>
+        <button id="play-dialogue" type="button" class="play" title="Probar desde el estado seleccionado"><span aria-hidden="true">▷</span> Probar diálogo</button>
+      </div>
+    </div>
+
+    <section class="board" id="board" aria-label="Grafo de la conversación">
+      <canvas id="connections" aria-hidden="true"></canvas>
+      <div id="stage" class="stage"></div>
+      <div class="board-toolbar">
+        <button id="add-state" type="button"><span aria-hidden="true">+</span> Estado</button>
+        <button id="add-exit" type="button"><span aria-hidden="true">+</span> Salida</button>
+      </div>
+      <div class="board-footer">
+        <div class="legend" aria-label="Tipos de líneas"><span class="legend-player">Jugador</span><span class="legend-npc">PNJ</span><span class="legend-exit">Salida al juego</span></div>
+        <div class="zoom" aria-label="Controles de zoom">
+          <button id="zoom-out" type="button" aria-label="Alejar">−</button>
+          <output id="zoom-value">100%</output>
+          <button id="zoom-in" type="button" aria-label="Acercar">+</button>
+          <button id="fit" type="button" class="fit" title="Ajustar al lienzo">Ajustar</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="inspector" aria-labelledby="inspector-title">
+      <div class="inspector-bar">
+        <h1 id="inspector-title">Propiedades</h1>
+        <button id="validation-button" type="button" class="quiet validation-button">Validación</button>
+      </div>
+      <div id="inspector-content" class="inspector-content"></div>
+    </aside>
+  </main>
+
+  <dialog id="modal" aria-labelledby="modal-title">
+    <div class="modal-bar">
+      <h2 id="modal-title"></h2>
+      <button id="close-modal" type="button" class="quiet" aria-label="Cerrar">×</button>
+    </div>
+    <div id="modal-content" class="modal-content"></div>
+  </dialog>
+  <div id="notice" class="notice" role="status" hidden></div>
+</body>
+</html>
